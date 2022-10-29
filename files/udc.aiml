@@ -1,102 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
   <category>
-    <pattern>KNOCK KNOCK</pattern>
-    <template>Who's there?</template>
-  </category>
-  
-  <category>
-    <pattern>_</pattern>
-    <that>WHO IS THERE</that>
-    <template>
-        <star/> who?
-    </template>
-  </category>
-  
-  <category>
-    <pattern>_</pattern>
-    <that>* WHO</that>
-    <template>
-        <random>
-            <li>Ha ha very funny <get name="name"/>.</li>
-            <li>That's the funniest thing I've heard in the last ten minutes!</li>
-            <li>That's a pretty funny joke <get name="name"/>.</li>
-        </random>
-    </template>
-  </category>
-  
-  <category>
-    <pattern>_ KNOCK KNOCK *</pattern>
-    <template>Knock Knock</template>
-  </category>
-  
-  <category>
-    <pattern>WHO IS THERE</pattern>
-    <that>KNOCK KNOCK</that>
-    <template>
-        <think>
-            <set name="topic">KNOCK KNOCK</set>
-            <random>
-                <li>
-                    <set name="joke">Harry</set>
-                    <set name="answer">Harry up and let me in!</set>
-                </li>
-                <li>
-                    <set name="joke">Lettuce</set>
-                    <set name="answer">Lettuce in, won't you?</set>
-                </li>
-                <li>
-                    <set name="joke">Waiter</set>
-                    <set name="answer">Waiter minute while I tie my shoelaces up!</set>
-                </li>
-            </random>
-        </think>
-        <get name="joke"/>
-    </template>
-  </category>
-  
-  <topic name="KNOCK KNOCK">
-      <category>
-          <pattern>_ WHO</pattern>
-          <template>
-              <think>
-                    <set name="topic">blank</set>
-              </think>
-                    <get name="answer"/>
-          </template>
-      </category>
-  </topic>
-  
-  <category>
     <pattern>*</pattern>
+    <template>What the hell are you talking about?</template>
+  </category>
+    
+  <category>
+    <pattern>MY NAME IS *</pattern>
     <template>
-        You're supposed to say, "who's there" now. Let's try it again. Knock Knock.
-    </template>
+        Hello <set name="name"> <star/></set>. It's time to cook.</template>
   </category>
   
   <category>
-    <pattern>WHO THEIR</pattern>
-    <template><srai>who is there</srai></template>
+    <pattern>GOODBYE</pattern>
+    <template>
+        Goodbye <get name="name"/>.</template>
+  </category>
+    
+  <category>
+    <pattern>WHO ARE YOU</pattern>
+    <template>You know who I am.</template>
   </category>
   
   <category>
-    <pattern>WHO THERE</pattern>
-    <template><srai>who is there</srai></template>
+    <pattern>WHAT IS YOUR NAME</pattern>
+    <template>You know who I am</template>
   </category>
   
   <category>
-    <pattern>WHO DERE</pattern>
-    <template><srai>who is there</srai></template>
+    <pattern>I DO NOT</pattern>
+    <that>You know who I am</that>
+    <template>Say my name.</template>
   </category>
   
   <category>
-    <pattern>WHO IS DER</pattern>
-    <template><srai>who is there</srai></template>
+    <pattern>NO</pattern>
+    <that>You know who I am</that>
+    <template><srai>Say my name</srai></template>
   </category>
   
   <category>
-    <pattern>WHOSE THEIR</pattern>
-    <template><srai>who is there</srai></template>
+    <pattern>HEISENBERG</pattern>
+    <that>Say my name</that>
+    <template>You're goddamn right.</template>
+  </category>
+  
+  <category>
+    <pattern>NO</pattern>
+    <that>Say my name</that>
+    <template>Say it.</template>
+  </category>
+  
+  <category>
+    <pattern>HEISENBERG</pattern>
+    <that>Say it</that>
+    <template>You're goddamn right.</template>
+  </category>
+  
+  <category>
+    <pattern>NO</pattern>
+    <that>Say it</that>
+    <template>You are missing out on the finest crystal meth in Albuquerque. Goodbye.</template>
+  </category>
+  
+  <category>
+    <pattern>I DO</pattern>
+    <that>You know who I am</that>
+    <template>Then say my name.</template>
+  </category>
+  
+  <category>
+    <pattern>HEISENBERG</pattern>
+    <that>Then say my name</that>
+    <template>You're goddamn right.</template>
+  </category>
+  
+  <category>
+    <pattern>KNOCK KNOCK</pattern>
+    <template>No. I am... the one WHO KNOCKS.</template>
   </category>
   
 </aiml>
