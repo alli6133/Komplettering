@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>KNOCK KNOCK</pattern>
+    <template>Who's there?</template>
+  </category>
+  
+  <category>
+    <pattern>_</pattern>
+    <that>WHO IS THERE</that>
+    <template>
+        <star/> who?
+    </template>
+  </category>
+  
+  <category>
+    <pattern>_</pattern>
+    <that>* WHO</that>
+    <template>
+        <random>
+            <li>Ha ha very funny <get name="name"/>.</li>
+            <li>That's the funniest thing I've heard in the last ten minutes!</li>
+            <li>That's a pretty funny joke <get name="name"/>.</li>
+        </random>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>_ KNOCK KNOCK *</pattern>
+    <template>Knock Knock</template>
+  </category>
+  
+  <category>
+    <pattern>WHO IS THERE</pattern>
+    <that>KNOCK KNOCK</that>
+    <template>
+        <think>
+            <set name="topic">KNOCK KNOCK</set>
+            <random>
+                <li>
+                    <set name="joke">Harry</set>
+                    <set name="answer">Harry up and let me in!</set>
+                </li>
+                <li>
+                    <set name="joke">Lettuce</set>
+                    <set name="answer">Lettuce in, won't you?</set>
+                </li>
+                <li>
+                    <set name="joke">Waiter</set>
+                    <set name="answer">Waiter minute while I tie my shoelaces up!</set>
+                </li>
+            </random>
+        </think>
+        <get name="joke"/>
+    </template>
+  </category>
+  
+  <topic name="KNOCK KNOCK">
+      <category>
+          <pattern>_ WHO</pattern>
+          <template>
+              <think>
+                    <set name="topic">blank</set>
+              </think>
+                    <get name="answer"/>
+          </template>
+      </category>
+  </topic>
+  
+  <category>
+    <pattern>*</pattern>
+    <template>
+        You're supposed to say, "who's there" now. Let's try it again. Knock Knock.
+    </template>
+  </category>
+  
+  <category>
+    <pattern>WHO THEIR</pattern>
+    <template><srai>who is there</srai></template>
+  </category>
+  
+  <category>
+    <pattern>WHO THERE</pattern>
+    <template><srai>who is there</srai></template>
+  </category>
+  
+  <category>
+    <pattern>WHO DERE</pattern>
+    <template><srai>who is there</srai></template>
+  </category>
+  
+  <category>
+    <pattern>WHO IS DER</pattern>
+    <template><srai>who is there</srai></template>
+  </category>
+  
+  <category>
+    <pattern>WHOSE THEIR</pattern>
+    <template><srai>who is there</srai></template>
+  </category>
+  
+</aiml>
